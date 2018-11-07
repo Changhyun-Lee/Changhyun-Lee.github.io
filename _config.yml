@@ -4,18 +4,17 @@
 ##########################################
 
 # Set this for Copyright in the footer
-owner: Name Surname
-
+owner: Changhyun Lee
 # Optional quote in the footer
 # To disable set enable to false
 quote:
   enable: true
-  quote: Some fancy quote
-  author: John Doe
+  quote: Data Mining & Quality Analytics Lab.
+  author: Korea university
 
 # Set this to your main site title. If page doesn't have its own title,
 # then this title will be used.
-title: Aliquam Theme
+title: Study
 
 
 # Following needed for disqus integration
@@ -27,7 +26,7 @@ disqus:
 
 # Set your host if deployed not locally
 # For example "https://yourGitHub.github.io"
-url:
+url: "https://changhyun-lee.github.io"
 
 # Change this to your base URL starting with forward slash if site is in gh-pages branch
 # For example /branchName
