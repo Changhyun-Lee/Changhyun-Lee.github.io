@@ -32,7 +32,7 @@ url:
 # Change this to your base URL starting with forward slash if site is in gh-pages branch
 # For example /branchName
 # NOTE! only change if site is NOT in master's branch
-baseurl:
+baseurl: "/"
 
 # Change this to your google analytics ID
 google_analytics:
