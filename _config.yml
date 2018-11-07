@@ -50,7 +50,7 @@ paginate: 5
 permalink: /:categories/:title
 
 # MathJax support
-math: false
+math: True
 
 collections:
 - definitions
