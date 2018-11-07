@@ -8,7 +8,7 @@ owner: Changhyun Lee
 # Optional quote in the footer
 # To disable set enable to false
 quote:
-  enable: False
+  enable: True
   quote: Data Mining & Quality Analytics Lab.
   author: Korea university
 
