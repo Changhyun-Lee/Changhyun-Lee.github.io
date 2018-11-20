@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Support Vector Regression
-category: machine learning
+category: example
 comments: true
 description: ..
 tags:
@@ -14,6 +14,18 @@ tags:
 Support Vector Regression 논문(Basak, D., Pal, S., & Patranabis, D. C. , 2007),
 고려대학교 DMQA 연구실 박사과정 이민정님의 코드를 참고하여 작성되었습니다.
 잘못된 부분이 있으면 연락 바랍니다.
+
+## Sample Data
+
+𝒚=𝟑+𝒍𝒐𝒈(𝒙)+𝒔𝒊𝒏(𝒙) 의 식에 정규분포를 따르는 노이즈를 주어 50개의 샘플 데이터를 생성하였습니다. 이 샘플 데이터를 이용하여 SVR 이 어떤 원리로 작동되는지 알아보도록 하겠습니다.
+
+<figure>
+<img alt="Sample Data" src="/resources/images/sample_data_01.jpg"/>
+<figcaption>
+<strong>Figure 1: </strong> Sample Data
+</figcaption>
+</figure>
+
 
 
 >The first rule of any technology used in a business is that automation applied to an efficient operation will magnify the efficiency. The second is that automation applied to an inefficient operation will magnify the inefficiency.
