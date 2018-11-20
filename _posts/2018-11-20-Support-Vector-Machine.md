@@ -114,9 +114,15 @@ SVR 의 목적함수를 다시 보도록 하겠습니다. C 값에 따라서 오
 <img alt="Sample Data" src="/resources/images/SVR2_00014.jpg"/>
 </figure>
 
-### Kernel Trick
+### Feature space, mapping
 
-지금까지 구한 회귀식은 선형 방정식으로 원 데이터를 설명하는데 한계를 가지고 있습니다. 이를 극복하기 위해서 고차원의 feature space 에서 학습을 진행 합니다. Original space 에서는 선형으로 해석이 안되던 부분이 고차원의 feature space 에서는 선형으로 분리될 수 있기 때문입니다. Original space 의 데이터를 고차원의 feature space 로 보내기 위해서는 맵핑함수가 필요합니다.
+지금까지 구한 회귀식은 선형 방정식으로 원 데이터를 설명하는데 한계를 가지고 있습니다. 이를 극복하기 위해서 고차원의 feature space 에서 학습을 진행 합니다. Original space 에서는 선형으로 해석이 안되던 부분이 고차원의 feature space 에서는 선형으로 분리될 수 있기 때문입니다. Original space 의 데이터를 고차원의 feature space 로 보내기 위해서는 맵핑함수가 필요합니다. 예를 들어 위에서 사용한 샘플 데이터의 𝒙 를 𝟑+𝒍𝒐𝒈(𝒙)+𝒔𝒊𝒏(𝒙)로 mapping 하게 되면 비선형 관계에 있던 데이터들이 선형 관계로 변하게 되어 선형으로도 충분히 정확한 모형 학습이 가능합니다.
+
+<figure>
+<img alt="Sample Data" src="/resources/images/SVR2_00026.jpg"/>
+</figure>
+
+### Kernel trick
 
 하지만 이러한 맵핑함수를 모르더라도 kernel 함수를 이용하면 효율적으로 데이터를 고차원의 feature space 로 변환할 수 있습니다. 위의 수식으로 확인한 Lagrangian Dual 의 함수식에서 x 의 내적부분을 Kernel 함수로 바꾸는 것만으로도 고차원 feature space 에서 학습되는 효과를 가질 수 있습니다. 아래는 kernel 함수의 예를 나타낸 것입니다. Kernel 선택은 딱히 기준이 없기 때문에 사용하는 데이터의 특성에 맞는 kernel 을 선택하는 것이 중요합니다. 일반적으로 RBF Kernel 이 많이 사용 됩니다.
 
@@ -164,7 +170,26 @@ SVR 의 목적함수를 다시 보도록 하겠습니다. C 값에 따라서 오
 <img alt="Sample Data" src="/resources/images/SVR2_00025.jpg"/>
 </figure>
 
+### SVR - Various Loss function
 
+위에서 본 여러가지 loss function 을 이용하여 SVR을 학습 시킨 결과는 아래와 같습니다. 뭔가 드라마틱한 차이를 기대했지만 샘플 데이터로는 큰 차이를 보이지는 않습니다. 하지만 각 loss 에 따라서 살짝씩 회귀식이 변하는 것을 보면 실제 데이터에서는 더 잘맞는 loss 가 있을 수 있으니 알아 두면 좋을 것 같습니다.
 
+| Loss function    | Train MAE | Train RMSE | Train R2 | Test MAE | Test RMSE | Test R2 |
+| ------------- | ------------- | ----------- | -------- |  ------------- | ----------- | -------- |
+| e-insensitive|0.5445 |	0.6776|	0.7307|	0.4661|	0.6158|	0.3393|
+| Laplacian    |0.5269	|0.6518	|0.7508	|0.5168	|0.6848	|0.1828|
+| Gaussian     |0.5377	|0.6853	|0.7244	|0.5086	|0.6577	|0.2463|
+| Huber’s Robust loss |0.539	|0.6549	|0.7484	|0.5123	|0.702	|0.1413|
+| Polynomial |0.5267	|0.6466	|0.7547	|0.5117	|0.7028	|0.1395|
+| Piecewise polynomial |0.5049	|0.5998	|0.7889	|0.534	|0.6884|	0.1743|
 
+<figure>
+<img alt="Sample Data" src="/resources/images/SVR2_00027.jpg"/>
+</figure>
 
+### Conclusion
+
+이 포스트에서 SVR 이 어떻게 학습이 되어 어떤 결과를 내어 주는지에 대하여 살펴 보았습니다. SVR 은 epsilon tube 와 C 값을 이용하기 때문에 모델식을 일반화 하는데 유리하며, support vector 라는 필요한 몇개의 데이터만을 학습에 이용하기 때문에 계산 효율성에도 유리합니다. 또한 convex optimization problem 이므로 항상 최적해를 구할 수 있다는 장점도 있습니다. SVR 은 선형의 최적해를 구하지만 kenel 을 이용하여 비선형의 최적해도 충분히 찾을 수 있다는 점도 확인하였습니다.
+
+본 포스트에서 사용한 code 는 github page 에 있으니 참고바랍니다.
+감사합니다.
