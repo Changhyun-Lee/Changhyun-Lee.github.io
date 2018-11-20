@@ -74,7 +74,7 @@ Support Vector Regression 은 위에서 살펴본 Ridge Regression 과 상당히
 
 ### SVR vs SVM
 
-SVR 은 SVM 의 Soft margin case 와 유사합니다. SVR은 모든 데이터를 epsilon tube 안에 두고 싶어 합니다. 하지만 epsilon tube 의 크기는 정해져 있기 때문에(hyper-parameter) 모든 데이터가 tube 안에 들어갈 수는 없습니다. 이 때 tube 밖에 있는 데이터는 그래도최대한 tube 가까이에 있어야 한다는 제약을 걸어 줍니다. 이로써 우리가 원하는 최적의 회귀식을 구할 수 있습니다.
+SVR 은 SVM 의 Soft margin case 와 유사합니다. SVR은 모든 데이터를 epsilon tube 안에 두고 싶어 합니다. 하지만 epsilon tube 의 크기는 정해져 있기 때문에(hyper-parameter) 모든 데이터가 tube 안에 들어갈 수는 없습니다. 이 때 tube 밖에 있는 데이터는 최대한 tube 가까이에 있어야 한다는 제약을 걸어 줍니다. 이로써 우리가 원하는 최적의 회귀식을 구할 수 있습니다.
 
 <figure>
 <img alt="Sample Data" src="/resources/images/SVR2_00008.jpg"/>
@@ -108,7 +108,7 @@ SVR 의 목적함수를 다시 보도록 하겠습니다. C 값에 따라서 오
 
 ### Convex optimization Problem
 
-이제 SVR 에 대한 이해가 어느정도 되었으니 수식으로 최적해를 구하는 과정을 살펴보도록 하겠습니다.
+이제 SVR 에 대한 이해가 어느정도 되었으니 수식으로 최적해를 구하는 과정을 살펴보도록 하겠습니다. Original problem 을 풀기 위해서 lagrangian multiplier 를 이용하여 lagrangian primal 식을 만들수 있습니다. KKT condition 의 stationarity 조건에 따라 각 변수로 편미분한 값이 0인 지점이 primal 의 최소값이며 동시에 dual 의 최대값입니다. 굳이 dual 로 문제를 변형하는 이유는 누가 봐도 dual 식이 푸는데 더 쉬워보이니 그런것이라고 생각하면 편할것 같습니다. 실제로 primal 에서는 찾아야할 변수가 𝑏, 𝜔, 𝜉, 𝛼, 𝜂 인 반면에 dual 에서는 𝑏, 𝛼 만 찾으면 됩니다. 또한 𝛼 의 2차항으로 나타나기 때문에 convex, continuos 이므로 전역최적해가 존재하므로 dual 문제로 변형하여 해결합니다. 수식은 아래를 참고하시길 바랍니다.
 
 <figure>
 <img alt="Sample Data" src="/resources/images/SVR2_00014.jpg"/>
@@ -116,7 +116,7 @@ SVR 의 목적함수를 다시 보도록 하겠습니다. C 값에 따라서 오
 
 ### Feature space, mapping
 
-지금까지 구한 회귀식은 선형 방정식으로 원 데이터를 설명하는데 한계를 가지고 있습니다. 이를 극복하기 위해서 고차원의 feature space 에서 학습을 진행 합니다. Original space 에서는 선형으로 해석이 안되던 부분이 고차원의 feature space 에서는 선형으로 분리될 수 있기 때문입니다. Original space 의 데이터를 고차원의 feature space 로 보내기 위해서는 맵핑함수가 필요합니다. 예를 들어 위에서 사용한 샘플 데이터의 𝒙 를 𝟑+𝒍𝒐𝒈(𝒙)+𝒔𝒊𝒏(𝒙)로 mapping 하게 되면 비선형 관계에 있던 데이터들이 선형 관계로 변하게 되어 선형으로도 충분히 정확한 모형 학습이 가능합니다.
+지금까지 구한 회귀식은 선형식으로 원 데이터가 비선형 구조라고 하면 이를 설명하는데 한계가 있습니다. 이를 극복하기 위해서 데이터를 고차원의 feature space로 mapping하여 학습을 진행 합니다. Original space 에서는 선형으로 해석이 안되던 부분이 고차원의 feature space 에서는 선형으로 분리될 수 있기 때문입니다. Original space 의 데이터를 고차원의 feature space 로 보내기 위해서는 mapping 함수가 필요합니다. 예를 들어 위에서 사용한 샘플 데이터의 𝒙 를 𝟑+𝒍𝒐𝒈(𝒙)+𝒔𝒊𝒏(𝒙)로 mapping 하게 되면 비선형 관계에 있던 데이터들이 선형 관계로 변하게 되어 선형으로도 충분히 정확한 모형 학습이 가능합니다.
 
 <figure>
 <img alt="Sample Data" src="/resources/images/SVR2_00026.jpg"/>
@@ -193,3 +193,5 @@ SVR 의 목적함수를 다시 보도록 하겠습니다. C 값에 따라서 오
 
 본 포스트에서 사용한 code 는 github page 에 있으니 참고바랍니다.
 감사합니다.
+
+
