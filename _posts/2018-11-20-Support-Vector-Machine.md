@@ -13,8 +13,8 @@ tags:
 >아래 내용은 고려대학교 강필성 교수님의 Business-Analytics 강의와
 Support Vector Regression 논문(Basak, D., Pal, S., & Patranabis, D. C. , 2007),
 고려대학교 DMQA 연구실 박사과정 이민정님의 코드를 참고하여 작성되었습니다.
-잘못된 부분이 있으면 연락 바랍니다.
-><footer><cite> - changhyun1.lee@gamil.com</cite></footer>
+잘못된 부분이 있으면 연락 바랍니다. - changhyun1.lee@gamil.com
+{: .blockquote cite="http://www.worldwildlife.org/who/index.html" }
 
 ### Sample Data
 
