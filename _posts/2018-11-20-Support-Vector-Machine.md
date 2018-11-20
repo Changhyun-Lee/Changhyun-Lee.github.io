@@ -21,7 +21,7 @@ Support Vector Regression 논문(Basak, D., Pal, S., & Patranabis, D. C. , 2007)
 𝒚=𝟑+𝒍𝒐𝒈(𝒙)+𝒔𝒊𝒏(𝒙) 의 식에 정규분포를 따르는 노이즈를 주어 50개의 샘플 데이터를 생성하였습니다. 이 샘플 데이터를 이용하여 SVR 이 어떤 원리로 작동되는지 알아보도록 하겠습니다.
 
 <figure>
-<img alt="Sample Data" src="/resources/images/sample_data_01.jpg"/>
+<img alt="Sample Data" src="/resources/images/SVR_15.jpg"/>
 </figure>
 
 ### Linear Regression
@@ -29,13 +29,13 @@ Support Vector Regression 논문(Basak, D., Pal, S., & Patranabis, D. C. , 2007)
 SVR 을 진행하기 전에 Linear Regression 부터 확인해 보도록 하겠습니다. Sample 데이터를 이용하여 𝒚=𝜷_0+𝜷_1 𝒙 의 식을 얻을 수 있으며 아래와 같은 회귀선을 구할 수 있습니다. 그러면 (A) 와 (B) 의 차이는 무엇일까요? (A) 는 최소제곱법으로 찾은 오차를 최소화 하는 𝜷_0와 𝜷_1을 가지는 회귀식이고, (B) 는 𝜷_0=평균, 𝜷_1=0 인 회귀선 입니다. 어떤 회귀식이 더 좋은 회귀식 일까요? 일반적으로는 (A) 가 오차가 더 작으니 좋은 회귀식으로 말할 수 있습니다.
 
 <figure>
-<img alt="Sample Data" src="/resources/images/linear_regresion.jpg"/>
+<img alt="Sample Data" src="/resources/images/SVR_12.jpg"/>
 </figure>
 
 조금 과장을 하여 아래와 같은 새로운 데이터들이 주어질 경우 누가 더 예측을 잘할까요? (B) 가 아마도 더 낮은 오차로 예측을 할 것 입니다. 왜 이런 일이 생겼을까요? (A) 가 주어진 데이터에 과적합(overfit) 되어 있어서 그렇습니다. 전체의 데이터 분포가 아닌 현재 가지고 있는 데이터를 이용하여 학습하였기 때문에 현재 가지고 있는 데이터만 잘 설명하고 있습니다. 따라서 새로운 데이터를 어느 정도로 예측할 수 있을지는 장담하기 어렵습니다. 이러한 일을 방지하기 위해서는 어떻게 해야 할까요? (B) 처럼 회귀식의 기울기를 작게 하는 것입니다. 회귀식의 기울기를 작게 한다는 것은 입력 변수 x 에 따른 민감도를 줄이는 것입니다. 다시 말해서 예측값의 Variance 를 줄이는 것입니다.
 
 <figure>
-<img alt="Sample Data" src="/resources/images/linear_regresion_02.jpg"/>
+<img alt="Sample Data" src="/resources/images/SVR_13.jpg"/>
 </figure>
 
 ### Ridge Regression
@@ -43,7 +43,7 @@ SVR 을 진행하기 전에 Linear Regression 부터 확인해 보도록 하겠�
 입력 변수에 대한 민감도를 줄여 과적합을 막아 모델의 Variance 를 낮출수 있는 방법으로 Ridge Regression 이 있습니다. 입력 변수에 대한 민감도를 줄이기 위해 Linear Regression 의 Loss function 에 계수의 크기를 제약식으로 추가한 방법입니다. 이를 통하여 오차도 적당히 줄이면서 민감도도 낮은 과적합이 개선된 예측 모델을 얻을 수 있습니다. Ridge Regression 의 loss function 은 다음과 같이 나타 낼 수 있습니다.
 
 <figure>
-<img alt="Sample Data" src="/resources/images/ridge_regresion.jpg"/>
+<img alt="Sample Data" src="/resources/images/SVR_14.jpg"/>
 </figure>
 
 ### Support Vector Regression
