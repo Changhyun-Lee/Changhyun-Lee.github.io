@@ -3,7 +3,7 @@ layout: post
 title: Support Vector Regression
 category: example
 comments: true
-description: ..
+description: Support Vector Regression - business-analytics
 tags:
     - SVR
     - machine learning
