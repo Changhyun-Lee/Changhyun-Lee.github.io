@@ -138,7 +138,6 @@ SVR 의 목적함수를 다시 보도록 하겠습니다. C 값에 따라서 오
 <img alt="Sample Data" src="/resources/images/SVR_11.jpg"/>
 </figure>
 
-
 ### RBF Kernel - Gamma
 
 다음은 C=1, epsilon=0.5 일때, RBF kernel 에 있는 𝛾 값을 변화 하면서 회귀식의 변화를 확인한 것입니다. 𝛾  값이 크다는 것은 두 벡터 사이의 거리를 더 크게 보겠다는 의미이고, 𝛾 값이 작다는 것은 두 벡터 사이의 거리를 작게 보겠다는 의미 입니다. 즉 RBF kernel fuction 에 의해 생성되는 고차원의 feature space 가 𝛾 값이 크면 넓게넓게 생성되고 𝛾 값이 작으면 조밀조밀 하게 생성이 되는 것이죠. 
@@ -150,6 +149,15 @@ SVR 의 목적함수를 다시 보도록 하겠습니다. C 값에 따라서 오
 </figure>
 
 ### Various Loss function for SVR
+
+각 데이터가 가지는 error를 아래와 같은 loss function 으로 사용할 수 있습니다. 지금까지 평가한 내용은 가장 기본적인 𝜺−𝒊𝒏𝒔𝒆𝒏𝒔𝒊𝒕𝒊𝒗𝒆 loss function 을 사용한 결과입니다. 절대적으로 좋은 모델이란 없듯이 loss function도 마찬가지인것 같습니다. 필요에 따라 회귀식에서 가까이 있는 데이터와 멀리 있는 데이터의 loss 에 다른 가중치를 주고 싶을때 아래 그래프를 참고하여 원하는 형태의 loss function 을 선택하여 사용하면 좀 더 사용자의 의도가 더 잘 반영된 회귀식을 찾아 낼 수 있다 정도로 생각하면 될 것 같습니다.
+
+<figure>
+<img alt="Sample Data" src="/resources/images/SVR_18.jpg"/>
+<img alt="Sample Data" src="/resources/images/SVR_19.jpg"/>
+<img alt="Sample Data" src="/resources/images/SVR_20.jpg"/>
+<img alt="Sample Data" src="/resources/images/SVR_21.jpg"/>
+</figure>
 
 
 
