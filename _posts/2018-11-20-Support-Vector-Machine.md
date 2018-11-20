@@ -8,7 +8,7 @@ tags:
     - SVR
     - machine learning
 ---
-이 포스트에서는 Support Vector Regression(SVR) 의 개념을 이해하고자 합니다. 또한, 간단한 형태의 데이터를 이용하여 SVR 의 요소들이 어떠한 의미를 가지고 있는지 눈으로 확인해 보도록 하겠습니다.
+이 포스트에서는 Support Vector Regression(SVR) 의 개념을 이해하고자 합니다. 간단한 형태의 데이터를 이용하여 SVR 의 요소들이 어떠한 의미를 가지고 있는지 확인해 보도록 하겠습니다.
 
 >아래 내용은 고려대학교 강필성 교수님의 Business-Analytics 강의와
 Support Vector Regression 논문(Basak, D., Pal, S., & Patranabis, D. C. , 2007),
